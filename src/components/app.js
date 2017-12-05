@@ -17,7 +17,7 @@ class App extends React.Component{
     return(
       <div>
         <h2> Recipe Box </h2>
-        <Box/>
+        <Box recipes = {this.state.recipes}/>
         <button>Add Recipe</button>
       </div>
     );

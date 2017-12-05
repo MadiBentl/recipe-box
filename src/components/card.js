@@ -1,7 +1,9 @@
 import React, {Component} from "react";
 
-class Card extends Component{
-
-}
+const Card = ({recipe}) => {
+  return (<div>
+    <h4>{recipe.name}</h4>
+  </div>);
+};
 
 export default Card;

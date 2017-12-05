@@ -1,8 +1,10 @@
 import React, {Component} from "react";
+import Card from "./card";
 
-class Box extends Component{
-  render(){
-    return <div className = "box">this is a box</div>;
-  }
+const Box = ({recipes}) => {
+    console.log({recipes});
+    return <div className = "box">
+      <Card recipe = {recipes[0]}/>
+    </div>;
 }
 export default Box;
