@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Box from "./box";
 
 const recipes = [
   {name: "Pumpkin Pie",
@@ -9,4 +10,10 @@ const recipes = [
     ingredients: ["Onion", "Pie Crust", "Sounds Yummy right?"]}
 ];
 
-export default class App;
+class App extends React.Component{
+  render(){
+    return <Box/>;
+  }
+}
+
+export default App;
