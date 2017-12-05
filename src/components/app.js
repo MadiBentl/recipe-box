@@ -11,6 +11,17 @@ const recipes = [
 ];
 
 class App extends React.Component{
+  constructor(props){
+    super(props);
+    this.state = {recipes: [
+      {name: "Pumpkin Pie",
+       ingredients: ["Pumpkin Puree", "Sweetened Condensed Milk", "Eggs","Pumpkin Pie Spice", "Pie Crust"]},
+      {name: "Spaghetti",
+        ingredients: ["Noodles", "Tomato Sauce", "(Optional) Meatballs"]},
+      {name: "Onion Pie",
+        ingredients: ["Onion", "Pie Crust", "Sounds Yummy right?"]}
+    ]};
+  }
   render(){
     return(
       <div>
