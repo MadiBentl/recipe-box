@@ -3,8 +3,14 @@ import Card from "./card";
 
 const Box = ({recipes}) => {
     console.log({recipes});
-    return <div className = "box">
-      <Card recipe = {recipes[0]}/>
-    </div>;
+    var x = -1;
+    const recipeCards = recipes.map((recipe) => {
+      return (<Card
+        recipe={recipe}/>
+      )
+    });
+    return (<div className = "box">
+      {recipeCards};
+    </div>);
 }
 export default Box;
