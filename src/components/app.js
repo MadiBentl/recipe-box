@@ -12,8 +12,13 @@ const recipes = [
 
 class App extends React.Component{
   render(){
-    return <Box/>;
-  }
+    return(
+      <div>
+        <Box/>
+        <p>Hello</p>
+      </div>
+    );
+  };
 }
 
 export default App;
