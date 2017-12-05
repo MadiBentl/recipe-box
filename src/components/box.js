@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 class Box extends Component{
   render(){
-    return <div>this is a box</div>;
+    return <div className = "box">this is a box</div>;
   }
 }
 export default Box;

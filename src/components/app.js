@@ -15,7 +15,7 @@ class App extends React.Component{
     return(
       <div>
         <Box/>
-        <p>Hello</p>
+        <button>Add Recipe</button>
       </div>
     );
   };
