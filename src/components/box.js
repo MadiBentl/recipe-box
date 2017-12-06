@@ -6,11 +6,12 @@ const Box = ({recipes}) => {
     var x = -1;
     const recipeCards = recipes.map((recipe) => {
       return (<Card
-        recipe={recipe}/>
+        recipe={recipe}
+        ingredients = {recipe.ingredients}/>
       )
     });
     return (<div className = "box">
-      {recipeCards};
+      {recipeCards}
     </div>);
 }
 export default Box;
