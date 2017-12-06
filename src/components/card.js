@@ -2,7 +2,12 @@ import React, {Component} from "react";
 import Ingredient from "./ingredient";
 
 class Card extends Component{
-//const Card = ({recipe, ingredients}) => {
+  constructor(){
+    super();
+    this.state = {
+      childVisible: false
+    }
+  }
   render(){
     const recipeIngredients = this.props.ingredients.map((ingredient, i) => {
       return (<Ingredient
@@ -11,10 +16,19 @@ class Card extends Component{
       )
     });
     return (<div>
-      <h4>{this.props.recipe.name}</h4>
-      <div>{recipeIngredients}</div>
+      <h4 onClick={() => this.onClick()}>{this.props.recipe.name}</h4>
+      {
+          this.state.childVisible
+            ? <div>{recipeIngredients}</div>
+            : null
+        }
+
     </div>);
+
   };
+  onClick() {
+    this.setState({childVisible: !this.state.childVisible});
+  }
 };
 
 export default Card;
