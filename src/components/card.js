@@ -2,9 +2,14 @@ import React, {Component} from "react";
 import Ingredient from "./ingredient";
 
 const Card = ({recipe, ingredients}) => {
+  const recipeIngredients = ingredients.map((ingredient) => {
+    return (<Ingredient
+      ingredient = {ingredient}/>
+    )
+  });
   return (<div>
     <h4>{recipe.name}</h4>
-    <h5>{ingredients}</h5>
+    <div>{recipeIngredients}</div>
   </div>);
 };
 
