@@ -4,9 +4,10 @@ import Ingredient from "./ingredient";
 class Card extends Component{
 //const Card = ({recipe, ingredients}) => {
   render(){
-    const recipeIngredients = this.props.ingredients.map((ingredient) => {
+    const recipeIngredients = this.props.ingredients.map((ingredient, i) => {
       return (<Ingredient
-        ingredient = {ingredient}/>
+        ingredient = {ingredient}
+        key = {i}/>
       )
     });
     return (<div>

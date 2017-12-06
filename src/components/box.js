@@ -4,10 +4,12 @@ import Card from "./card";
 const Box = ({recipes}) => {
     console.log({recipes});
     var x = -1;
-    const recipeCards = recipes.map((recipe) => {
+    const recipeCards = recipes.map((recipe, i) => {
       return (<Card
+        key = {i}
         recipe={recipe}
-        ingredients = {recipe.ingredients}/>
+        ingredients = {recipe.ingredients}
+        />
       )
     });
     return (<div className = "box">
