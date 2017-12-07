@@ -5,8 +5,7 @@ class Card extends Component{
   constructor(){
     super();
     this.state = {
-      childVisible: false,
-      visibleRecipe: null
+      visibleRecipe: "hello"
     }
   }
   render(){
@@ -21,7 +20,7 @@ class Card extends Component{
         <h4>{this.props.recipe.name}</h4>
         </div>
       {
-          this.state.childVisible
+          this.state.visibleRecipe == this.props.recipe.name
             ? <div>{recipeIngredients}</div>
             : null
         }
@@ -30,10 +29,9 @@ class Card extends Component{
 
   };
   onClick(clickedRecipe) {
-    this.setState({visibleRecipe: clickedRecipe});
-    if (clickedRecipe == this.state.visibleRecipe){
-      this.setState({childVisible: !this.state.childVisible});
-    }
+    this.setState({visibleRecipe: clickedRecipe}, function () {
+      console.log(this.state.visibleRecipe);
+    });
   }
 };
 
