@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Box from "./box";
-import Popup from 'react-popup';
 
 class App extends React.Component{
   constructor(props){
