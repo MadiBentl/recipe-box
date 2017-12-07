@@ -5,7 +5,7 @@ class Card extends Component{
   constructor(){
     super();
     this.state = {
-      visibleRecipe: "hello"
+      visibleRecipe: null
     }
   }
   render(){
