@@ -7,3 +7,7 @@
 h2{
   text-align: center;
 }
+.myCard{
+  width: 100%;
+  background-color: orange;
+}
