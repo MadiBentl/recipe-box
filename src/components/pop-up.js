@@ -22,8 +22,9 @@ class Popup extends Component {
         <h4>Ingredients</h4>
         <input
           value={this.state.recipeIngredients}
-          onChange= {this.handleIngChange}/>
-          </form>
+          onChange= {this.handleIngChange}/><br/>
+        <input type="submit" value="Submit" />
+        </form>
       </div>
     );
   }
