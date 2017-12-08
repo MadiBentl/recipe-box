@@ -7,25 +7,31 @@ class Popup extends Component {
       recipeName: '',
       recipeIngredients: ''
     };
-    this.handleChange = this.handleChange.bind(this);
+    this.handleRecChange = this.handleRecChange.bind(this);
+    this.handleIngChange = this.handleIngChange.bind(this);
   }
   render(){
     return (
       <div className="popup">
-      <h3>Add a recipe</h3>
-      <h4>Recipe</h4>
-      <input
-        value={this.state.recipeName}
-        onChange= {this.handleChange}/>
-      <h4>Ingredients</h4>
-      <input
-        value={this.state.recipeIngredients}
-        onChange= {this.handleChange}/>
+      <form>
+        <h3>Add a recipe</h3>
+        <h4>Recipe</h4>
+        <input
+          value={this.state.recipeName}
+          onChange= {this.handleRecChange}/>
+        <h4>Ingredients</h4>
+        <input
+          value={this.state.recipeIngredients}
+          onChange= {this.handleIngChange}/>
+          </form>
       </div>
     );
   }
-    handleChange(event) {
+    handleRecChange(event) {
       this.setState({recipeName: event.target.value});
+    }
+    handleIngChange(event) {
+      this.setState({recipeIngredients: event.target.value});
     }
 }
 
