@@ -9,11 +9,12 @@ class Popup extends Component {
     };
     this.handleRecChange = this.handleRecChange.bind(this);
     this.handleIngChange = this.handleIngChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
   render(){
     return (
       <div className="popup">
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <h3>Add a recipe</h3>
         <h4>Recipe</h4>
         <input
@@ -33,6 +34,10 @@ class Popup extends Component {
     }
     handleIngChange(event) {
       this.setState({recipeIngredients: event.target.value});
+    }
+    handleSubmit(event){
+      console.log(this.state.recipeName);
+      event.preventDefault();
     }
 }
 
