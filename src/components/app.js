@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Box from "./box";
+import Popup from './pop-up';
 
 class App extends React.Component{
   constructor(props){
@@ -11,14 +12,21 @@ class App extends React.Component{
         ingredients: ["Noodles", "Tomato Sauce", "(Optional) Meatballs"]},
       {name: "Onion Pie",
         ingredients: ["Onion", "Pie Crust", "Sounds Yummy right?"]}
-    ]};
+    ],
+      popupVisible: false
+    };
+    this.showPopup = this.showPopup.bind(this);
+  }
+  showPopup(){
+    this.setState({popupVisible : true});
   }
   render(){
     return(
       <div>
         <h2> Recipe Box </h2>
         <Box recipes = {this.state.recipes}/>
-        <button>Add Recipe</button>
+        <button onClick= {this.showPopup}>Add Recipe</button>
+        {this.state.popupVisible == true ? <Popup/> : null}
       </div>
     );
   };
