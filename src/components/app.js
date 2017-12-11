@@ -22,7 +22,9 @@ class App extends React.Component{
     this.setState({popupVisible : true});
   }
   addARecipe(recipe){
-    this.setState({popupVisible : true});
+    var myRecipes = this.state.recipes;
+    myRecipes.push(recipe);
+    this.setState({'recipes':myRecipes});
     //this.setState({'recipes': myRecipes});
   }
   render(){
