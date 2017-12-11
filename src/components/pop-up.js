@@ -37,8 +37,10 @@ class Popup extends Component {
       this.setState({recipeIngredients: event.target.value});
     }
     handleSubmit(event){
-      console.log(this.state.recipeName + this.state.recipeIngredients);
       event.preventDefault();
+      console.log(this.state.recipeName + this.state.recipeIngredients);
+      this.props.addRecipe("testing");
+
     }
 }
 
