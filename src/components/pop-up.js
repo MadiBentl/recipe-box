@@ -13,6 +13,7 @@ class Popup extends Component {
   }
   render(){
     return (
+       //add extra div to add grey to popped up modal
       <div className="popup">
       <form onSubmit={this.handleSubmit}>
         <h3>Add a recipe</h3>

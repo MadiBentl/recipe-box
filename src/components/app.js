@@ -20,13 +20,18 @@ class App extends React.Component{
   showPopup(){
     this.setState({popupVisible : true});
   }
+  addARecipe(recipe){
+    var recipes = this.state.recipes;
+    recipes.push(recipe);
+    this.setState({recipes});
+  }
   render(){
     return(
       <div>
         <h2> Recipe Box </h2>
         <Box recipes = {this.state.recipes}/>
         <button onClick= {this.showPopup}>Add Recipe</button>
-        {this.state.popupVisible == true ? <Popup/> : null}
+        {this.state.popupVisible == true ? <Popup addRecipe={this.addARecipe}/> : null}
       </div>
     );
   };
