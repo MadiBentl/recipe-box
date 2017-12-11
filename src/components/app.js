@@ -16,14 +16,13 @@ class App extends React.Component{
       popupVisible: false
     };
     this.showPopup = this.showPopup.bind(this);
+    this.addARecipe = this.addARecipe.bind(this);
   }
   showPopup(){
     this.setState({popupVisible : true});
   }
   addARecipe(recipe){
-    let myRecipes = [];
-    myRecipes.push(recipe);
-    console.log(myRecipes);
+    this.setState({popupVisible : true});
     //this.setState({'recipes': myRecipes});
   }
   render(){
