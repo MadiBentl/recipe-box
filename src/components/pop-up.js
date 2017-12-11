@@ -39,9 +39,8 @@ class Popup extends Component {
     handleSubmit(event){
       event.preventDefault();
       console.log(this.state.recipeName + this.state.recipeIngredients);
-      let recipe = {"name": this.state.recipeName, "ingredients": [this.state.recipeIngredients]};
+      let recipe = {"name": this.state.recipeName, "ingredients": this.state.recipeIngredients.split(',')};
       this.props.addRecipe(recipe);
-
     }
 }
 
