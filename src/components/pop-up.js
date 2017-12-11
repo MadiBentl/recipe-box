@@ -41,6 +41,7 @@ class Popup extends Component {
       console.log(this.state.recipeName + this.state.recipeIngredients);
       let recipe = {"name": this.state.recipeName, "ingredients": this.state.recipeIngredients.split(',')};
       this.props.addRecipe(recipe);
+      this.props.hide();
     }
 }
 

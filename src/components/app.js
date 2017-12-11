@@ -16,10 +16,14 @@ class App extends React.Component{
       popupVisible: false
     };
     this.showPopup = this.showPopup.bind(this);
+    this.hidePopup = this.hidePopup.bind(this);
     this.addARecipe = this.addARecipe.bind(this);
   }
   showPopup(){
     this.setState({popupVisible : true});
+  }
+  hidePopup(){
+    this.setState({popupVisible : false});
   }
   addARecipe(recipe){
     var myRecipes = this.state.recipes;
@@ -33,7 +37,7 @@ class App extends React.Component{
         <h2> Recipe Box </h2>
         <Box recipes = {this.state.recipes}/>
         <button onClick= {this.showPopup}>Add Recipe</button>
-        {this.state.popupVisible == true ? <Popup addRecipe={this.addARecipe}/> : null}
+        {this.state.popupVisible == true ? <Popup addRecipe={this.addARecipe} hide={this.hidePopup}/> : null}
       </div>
     );
   };
