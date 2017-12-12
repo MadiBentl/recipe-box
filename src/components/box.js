@@ -1,19 +1,23 @@
 import React, {Component} from "react";
 import Card from "./card";
 
-const Box = ({recipes}) => {
-    console.log({recipes});
-    var x = -1;
-    const recipeCards = recipes.map((recipe, i) => {
-      return (<Card
-        key = {i}
-        recipe={recipe}
-        ingredients = {recipe.ingredients}
-        />
-      )
+class Box extends Component {
+  constructor(props){
+    super(props);
+  }
+  createRecipes(){
+    return this.props.recipes.map((recipe, i) => {
+    return (<Card
+      key = {i}
+      recipe={recipe}
+      ingredients = {recipe.ingredients}
+      />  );
     });
+  }
+  render(){
     return (<div className = "box">
-      {recipeCards}
+      {this.createRecipes()}
     </div>);
+  }
 }
 export default Box;
