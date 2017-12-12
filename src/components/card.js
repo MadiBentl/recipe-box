@@ -29,9 +29,16 @@ class Card extends Component{
 
   };
   onClick(clickedRecipe) {
-    this.setState({visibleRecipe: clickedRecipe}, function () {
-      console.log(this.state.visibleRecipe);
-    });
+    if (this.state.visibleRecipe != clickedRecipe){
+      this.setState({visibleRecipe: clickedRecipe}, function () {
+        console.log(this.state.visibleRecipe);
+      });
+    }
+    else if (this.state.visibleRecipe == clickedRecipe){
+      this.setState({visibleRecipe: null}, function () {
+        console.log(this.state.visibleRecipe);
+      });
+    }
   }
 };
 
