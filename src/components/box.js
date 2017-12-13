@@ -4,6 +4,11 @@ import Card from "./card";
 class Box extends Component {
   constructor(props){
     super(props);
+    this.state = {currentRecipe: null};
+    this.selectRecipe = this.selectRecipe.bind(this);
+  }
+  selectRecipe(recipe){
+    this.setState({currentRecipe: recipe});
   }
   createRecipes(){
     return this.props.recipes.map((recipe, i) => {
@@ -11,6 +16,7 @@ class Box extends Component {
       key = {i}
       recipe={recipe}
       ingredients = {recipe.ingredients}
+      selectRec={this.selectRecipe}
       />  );
     });
   }
