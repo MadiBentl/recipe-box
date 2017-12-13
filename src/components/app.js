@@ -33,7 +33,7 @@ class App extends React.Component{
   }
   deleteRecipe(recipe){
     var myRecipes = this.state.recipes;
-    myRecipes.splice(this.state.recipes.indexOf(recipe), 1);
+    myRecipes.splice(this.state.recipes.indexOf(recipe) -1, 1);
     this.setState({recipes: myRecipes});
   }
   render(){
