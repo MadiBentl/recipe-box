@@ -7,6 +7,7 @@ class Card extends Component{
     this.state = {
       visibleRecipe: null
     }
+
   }
   render(){
     const recipeIngredients = this.props.ingredients.map((ingredient, i) => {
@@ -21,7 +22,7 @@ class Card extends Component{
         </div>
       {
           this.state.visibleRecipe == this.props.recipe.name
-            ? <div>{recipeIngredients}<button>Delete</button></div>
+            ? <div>{recipeIngredients}<button onClick={() => this.deleteMe(this.props.recipe.name)}>Delete</button></div>
             : null
         }
 
@@ -29,6 +30,9 @@ class Card extends Component{
     </div>);
 
   };
+  deleteMe(recipe){
+    this.props.deleteRecipe(recipe);
+  }
   onClick(clickedRecipe) {
     this.props.selectRec(clickedRecipe);
     if (this.state.visibleRecipe != clickedRecipe){

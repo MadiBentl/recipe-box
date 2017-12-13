@@ -18,6 +18,7 @@ class App extends React.Component{
     this.showPopup = this.showPopup.bind(this);
     this.hidePopup = this.hidePopup.bind(this);
     this.addARecipe = this.addARecipe.bind(this);
+    this.deleteRecipe = this.deleteRecipe.bind(this);
   }
   showPopup(){
     this.setState({popupVisible : true});
@@ -29,13 +30,17 @@ class App extends React.Component{
     var myRecipes = this.state.recipes;
     myRecipes.push(recipe);
     this.setState({'recipes':myRecipes});
-    //this.setState({'recipes': myRecipes});
+  }
+  deleteRecipe(recipe){
+    var myRecipes = this.state.recipes;
+    myRecipes.splice(this.state.recipes.indexOf(recipe), 1);
+    this.setState({recipes: myRecipes});
   }
   render(){
     return(
       <div>
         <h2> Recipe Box </h2>
-        <Box recipes = {this.state.recipes}/>
+        <Box deleteRecipe = {this.deleteRecipe} recipes = {this.state.recipes}/>
         <button onClick= {this.showPopup}>Add Recipe</button>
         {this.state.popupVisible == true ? <Popup addRecipe={this.addARecipe} hide={this.hidePopup}/> : null}
       </div>
