@@ -17,6 +17,7 @@ class Box extends Component {
       recipe={recipe}
       ingredients = {recipe.ingredients}
       selectRec={this.selectRecipe}
+      currentRec={this.state.currentRecipe}
       />  );
     });
   }
