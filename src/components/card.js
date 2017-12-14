@@ -22,7 +22,7 @@ class Card extends Component{
         </div>
       {
           this.state.visibleRecipe == this.props.recipe.name
-            ? <div>{recipeIngredients}<button onClick={() => this.deleteMe(this.props.recipe)}>Delete</button></div>
+            ? <div>{recipeIngredients}<button onClick={() => this.deleteMe(this.props.recipe)}>Delete</button><button>Edit</button></div>
             : null
         }
 
