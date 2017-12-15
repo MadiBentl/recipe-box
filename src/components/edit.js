@@ -7,7 +7,7 @@ class Edit extends Component{
   }
   render(){
     return(
-      <div className = "Edit">
+      <div className = "popup">
       <form onSubmit={this.handleSubmit}>
         <h3>Edit recipe</h3>
         <h4>Recipe</h4>

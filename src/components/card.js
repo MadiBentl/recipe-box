@@ -6,7 +6,8 @@ class Card extends Component{
   constructor(){
     super();
     this.state = {
-      visibleRecipe: null
+      visibleRecipe: null,
+      edit: false
     }
 
   }
@@ -23,9 +24,10 @@ class Card extends Component{
         </div>
       {
           this.state.visibleRecipe == this.props.recipe.name
-            ? <div><h5>Ingredients</h5>{recipeIngredients}<button onClick={() => this.deleteMe(this.props.recipe)}>Delete</button><button>Edit</button></div>
+            ? <div><h5>Ingredients</h5>{recipeIngredients}<button onClick={() => this.deleteMe(this.props.recipe)}>Delete</button><button onClick={()=> this.displayEdit(this.props.recipe)}>Edit</button></div>
             : null
         }
+        {this.state.edit == true ? <Edit recipe={this.props.recipe.name}/> : null}
 
 
     </div>);
@@ -34,6 +36,9 @@ class Card extends Component{
   deleteMe(recipe){
     this.props.deleteRecipe(recipe);
     console.log(recipe);
+  }
+  displayEdit(recipe){
+    this.setState({edit:true});
   }
   onClick(clickedRecipe) {
     this.props.selectRec(clickedRecipe);
