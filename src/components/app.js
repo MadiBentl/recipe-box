@@ -39,7 +39,7 @@ class App extends React.Component{
   }
   render(){
     return(
-      <div className="app">
+      <div className="app container-fluid">
         <h2> Recipe Box </h2>
         <Box deleteRecipe = {this.deleteRecipe} recipes = {this.state.recipes}/>
         <button onClick= {this.showPopup}>Add Recipe</button>

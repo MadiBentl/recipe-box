@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import Ingredient from "./ingredient";
+import Edit from "./edit";
 
 class Card extends Component{
   constructor(){
