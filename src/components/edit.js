@@ -33,14 +33,14 @@ class Edit extends Component{
   handleSubmit(event){
     event.preventDefault();
     console.log(this.state.recipe + " " + this.state.ingredients);
-    let recipe = {"name": this.state.recipe, "ingredients": this.state.ingredients};
+    let recipe = {"name": this.state.recipe, "ingredients": this.state.ingredients.split(",")};
     this.props.updateRecipe(this.props.recipe, recipe);
   }
   handleRecChange(event){
     this.setState({recipe: event.target.value});
   }
   handleIngChange(event){
-    this.setState({recipe: event.target.value})
+    this.setState({ingredients: event.target.value})
   }
 }
 
