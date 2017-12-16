@@ -26,6 +26,7 @@ class Popup extends Component {
           value={this.state.recipeIngredients}
           onChange= {this.handleIngChange}/><br/>
         <input type="submit" value="Submit" />
+        <button onClick = {this.props.hide}>Close</button>
         </form>
       </div>
     );
