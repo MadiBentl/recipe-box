@@ -5,7 +5,7 @@ class Edit extends Component{
     super(props);
     this.state = {
       recipe: this.props.recipe.name,
-      ingredients: this.props.recipe.ingredients
+      ingredients: this.props.recipe.ingredients.join(",")
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRecChange = this.handleRecChange.bind(this);
@@ -35,6 +35,7 @@ class Edit extends Component{
     console.log(this.state.recipe + " " + this.state.ingredients);
     let recipe = {"name": this.state.recipe, "ingredients": this.state.ingredients.split(",")};
     this.props.updateRecipe(this.props.recipe, recipe);
+    this.props.hide();
   }
   handleRecChange(event){
     this.setState({recipe: event.target.value});

@@ -9,6 +9,7 @@ class Card extends Component{
       visibleRecipe: null,
       edit: false
     }
+    this.hideEdit = this.hideEdit.bind(this);
 
   }
   render(){
@@ -27,7 +28,7 @@ class Card extends Component{
             ? <div><h5>Ingredients</h5>{recipeIngredients}<button onClick={() => this.deleteMe(this.props.recipe)}>Delete</button><button onClick={()=> this.displayEdit(this.props.recipe)}>Edit</button></div>
             : null
         }
-        {this.state.edit == true ? <Edit updateRecipe={this.props.updateRecipe} recipe={this.props.recipe}/> : null}
+        {this.state.edit == true ? <Edit updateRecipe={this.props.updateRecipe} hide={this.hideEdit} recipe={this.props.recipe}/> : null}
 
 
     </div>);
@@ -39,6 +40,9 @@ class Card extends Component{
   }
   displayEdit(recipe){
     this.setState({edit:true});
+  }
+  hideEdit(){
+    this.setState({edit:false});
   }
   onClick(clickedRecipe) {
     this.props.selectRec(clickedRecipe);
