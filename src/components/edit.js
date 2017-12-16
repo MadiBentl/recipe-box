@@ -25,7 +25,7 @@ class Edit extends Component{
         <input
           defaultValue={this.props.recipe.ingredients} onChange={this.handleIngChange}
           /><br/>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Submit" /><button onClick={this.props.hide}>Close</button>
         </form>
       </div>
     )
