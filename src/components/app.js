@@ -40,6 +40,7 @@ class App extends React.Component{
   }
   updateRecipe(oldRecipe, newRecipe){
     var myRecipes = this.state.recipes;
+    console.log(oldRecipe);
     myRecipes.splice(myRecipes.indexOf(oldRecipe), 1, newRecipe)
     this.setState({recipes: myRecipes});
     console.log(this.state.recipes)
