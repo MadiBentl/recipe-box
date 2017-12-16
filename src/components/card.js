@@ -27,7 +27,7 @@ class Card extends Component{
             ? <div><h5>Ingredients</h5>{recipeIngredients}<button onClick={() => this.deleteMe(this.props.recipe)}>Delete</button><button onClick={()=> this.displayEdit(this.props.recipe)}>Edit</button></div>
             : null
         }
-        {this.state.edit == true ? <Edit recipe={this.props.recipe}/> : null}
+        {this.state.edit == true ? <Edit updateRecipe={this.props.updateRecipe} recipe={this.props.recipe}/> : null}
 
 
     </div>);

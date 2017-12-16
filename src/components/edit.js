@@ -4,8 +4,8 @@ class Edit extends Component{
   constructor(props){
     super(props);
     this.state = {
-      recipe: this.props.recipeName,
-      ingredients: this.props.recipeIngredients
+      recipe: this.props.recipe.name,
+      ingredients: this.props.recipe.ingredients
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleRecChange = this.handleRecChange.bind(this);
@@ -14,26 +14,27 @@ class Edit extends Component{
   render(){
     return(
       <div className = "popup">
+      {console.log(this.state.recipe + " " + this.state.ingredients)}
       <form onSubmit={this.handleSubmit}>
         <h3>Edit recipe</h3>
         <h4>Recipe</h4>
         <input
-          value={this.props.recipe.name} onChange={this.handleRecChange}
+          defaultValue={this.props.recipe.name} onChange={this.handleRecChange}
           />
         <h4>Ingredients</h4>
         <input
-          value={this.props.recipe.ingredients} onChange={this.handleIngChange}
+          defaultValue={this.props.recipe.ingredients} onChange={this.handleIngChange}
           /><br/>
         <input type="submit" value="Submit" />
         </form>
       </div>
     )
   }
-  handleSubmit(){
+  handleSubmit(event){
     event.preventDefault();
-    console.log(this.state.recipeName + this.state.recipeIngredients);
-    let recipe = {"name": this.state.recipeName, "ingredients": this.state.recipeIngredients.split(',')};
-    this.props.addRecipe(recipe);
+    console.log(this.state.recipe + " " + this.state.ingredients);
+    let recipe = {"name": this.state.recipe, "ingredients": this.state.ingredients};
+    this.props.updateRecipe(this.props.recipeName, recipe);
   }
   handleRecChange(event){
     this.setState({recipe: event.target.value});

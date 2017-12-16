@@ -19,6 +19,7 @@ class Box extends Component {
       selectRec={this.selectRecipe}
       currentRec={this.state.currentRecipe}
       deleteRecipe={this.props.deleteRecipe}
+      updateRecipe={this.props.updateRecipe}
       />  );
     });
   }
