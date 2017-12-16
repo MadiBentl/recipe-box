@@ -27,4 +27,5 @@ h2{
   padding: 30px;
   border: solid 3px #ddd;
   border-radius: 5px;
+  z-index: 100;
 }
