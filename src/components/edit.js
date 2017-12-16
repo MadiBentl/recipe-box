@@ -34,7 +34,7 @@ class Edit extends Component{
     event.preventDefault();
     console.log(this.state.recipe + " " + this.state.ingredients);
     let recipe = {"name": this.state.recipe, "ingredients": this.state.ingredients};
-    this.props.updateRecipe(this.props.recipeName, recipe);
+    this.props.updateRecipe(this.props.recipe.name, recipe);
   }
   handleRecChange(event){
     this.setState({recipe: event.target.value});

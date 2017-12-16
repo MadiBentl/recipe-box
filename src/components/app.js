@@ -39,7 +39,7 @@ class App extends React.Component{
     this.setState({recipes: myRecipes});
   }
   updateRecipe(oldRecipe, newRecipe){
-    console.log("shit works");
+    console.log(oldRecipe, newRecipe);
   }
   render(){
     return(
